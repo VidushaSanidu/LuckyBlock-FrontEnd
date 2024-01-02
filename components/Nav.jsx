@@ -1,4 +1,4 @@
-"use client";
+import { ConnectButton } from "web3uikit";
 
 export default function NavBar() {
   return (
@@ -19,13 +19,7 @@ export default function NavBar() {
       </div>
 
       <div className="lg:flex lg:flex-1 lg:justify-end">
-        <a
-          href="#"
-          className="text-md  md:text-xl font-semibold leading-6 text-gray-900"
-        >
-          Connect
-          <span aria-hidden="true">&rarr;</span>
-        </a>
+        <ConnectButton />
       </div>
     </nav>
   );
