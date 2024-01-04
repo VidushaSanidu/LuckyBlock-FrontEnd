@@ -1,5 +1,7 @@
 import "@styles/globals.css";
-import NavBar from "@components/Nav";
+import Header from "@components/Header";
+import WalletProvider from "@providers/WalletProvider";
+import ToastProvider from "@providers/ToastProvider";
 
 export const metadata = {
   title: "luckyBlock",
@@ -10,10 +12,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <main className="bg-violet-100 h-dvh">
-          <NavBar />
-          {children}
-        </main>
+        <WalletProvider>
+          <ToastProvider />
+          <main className="bg-violet-100 h-dvh">
+            <Header />
+            {children}
+          </main>
+        </WalletProvider>
       </body>
     </html>
   );

@@ -1,8 +1,10 @@
-import { ConnectButton } from "web3uikit";
+"use client";
 
-export default function NavBar() {
+import { ConnectWallet, lightTheme } from "@thirdweb-dev/react";
+
+export default function Header() {
   return (
-    <nav
+    <header
       className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 bg-violet-100"
       aria-label="Global"
     >
@@ -15,12 +17,22 @@ export default function NavBar() {
             alt="logo"
           />
         </a>
-        <h1 className="p-1 font-sans md:text-xl">Lucky Block Lottery App</h1>
+        <h1 className="p-1 font-sans md:text-xl">Lucky Block Lottery</h1>
       </div>
 
       <div className="lg:flex lg:flex-1 lg:justify-end">
-        <ConnectButton />
+        <ConnectWallet
+          theme={lightTheme({
+            colors: {
+              accentText: "#9b5add",
+              accentButtonBg: "#9b5add",
+              primaryButtonBg: "#7645a4",
+              primaryButtonText: "#feffff",
+            },
+          })}
+          modalSize={"compact"}
+        />
       </div>
-    </nav>
+    </header>
   );
 }
